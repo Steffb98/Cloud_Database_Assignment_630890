@@ -1,5 +1,8 @@
 ﻿{
   "SqlConnectionString": "Data Source=(LocalDb)\\MSSQLLocalDB;Initial Catalog=CDA;Integrated Security=True",
+  "Values": {
+    "EmailConnectionString": "endpoint=https://cdamailservice.communication.azure.com/;accesskey=oVM8MIZ5Y6ukGvQf4JmonMVx6E+AaEbdmXpPqSOENuVHm+r8Q3Y04UH5sGG+YYQeAc6tWPy9P0zrBXZz5/8osA==",
+  },
   "IsEncrypted": false,
   "Logging": {
     "LogLevel": {
