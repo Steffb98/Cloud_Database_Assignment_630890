@@ -2,11 +2,6 @@
 using Exceptions.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using Model.Entity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL.Repository
 {
@@ -33,11 +28,11 @@ namespace DAL.Repository
                 .ToListAsync() ?? throw new EntityNotFoundException("There are no users in the database");
         }
 
-        public async Task<List<House>> GetAllHousesInPriceRange(double priceRangeLow, double priceRangeHigh)
+        public async Task<List<House>> GetAllHousesInPriceRange(double lowPriceRange, double highPriceRange)
         {
             //returns a list of all houses in the database within the price range.
             return await _dbContext.Houses
-                .Where( h => h.Price >= priceRangeLow && h.Price <= priceRangeHigh)
+                .Where( h => h.Price >= lowPriceRange && h.Price <= highPriceRange)
                 .ToListAsync() ?? throw new EntityNotFoundException("There are no users in the database");
         }
     }
