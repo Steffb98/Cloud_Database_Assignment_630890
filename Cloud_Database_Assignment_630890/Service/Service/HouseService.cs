@@ -20,7 +20,7 @@ namespace Service.Service
             _houseRepository = houseRepository;
         }
 
-        public async Task CreateHouse(HouseDTO houseDTO)
+        public async Task<Guid> CreateHouse(HouseDTO houseDTO)
         {
             House house = new()
             {
@@ -30,6 +30,7 @@ namespace Service.Service
                 ImageUrl = houseDTO.ImageURL
             };
             await _houseRepository.CreateHouse(house);
+            return house.HouseID;
         }
 
         public async Task<List<House>> GetAllHouses()
@@ -37,9 +38,9 @@ namespace Service.Service
             return await _houseRepository.GetAllHouses();
         }
 
-        public async Task<List<House>> GetAllHousesWithPriceRange(PriceRangeDTO priceRangeDTO)
+        public async Task<List<House>> GetAllHousesWithPriceRange(double lowPriceRange, double highPriceRange)
         {
-            return await _houseRepository.GetAllHousesInPriceRange(priceRangeDTO.LowPriceRange, priceRangeDTO.HighPriceRange);
+            return await _houseRepository.GetAllHousesInPriceRange(lowPriceRange, highPriceRange);
         }
     }
 }

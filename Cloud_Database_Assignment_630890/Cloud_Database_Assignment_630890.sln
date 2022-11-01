@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exceptions", "Exceptions\Exceptions.csproj", "{BAE59F51-25D6-4B9A-A236-F56696C22208}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{4DFD8CD2-9C70-4923-A0D3-FB80373CD6EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{4DFD8CD2-9C70-4923-A0D3-FB80373CD6EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "House.API", "House.API\House.API.csproj", "{D8A45446-E1CD-4792-BA41-1028E83D86A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User.API", "User.API\User.API.csproj", "{99826173-454C-4774-A3B8-5E5667EAC6A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{4DFD8CD2-9C70-4923-A0D3-FB80373CD6EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DFD8CD2-9C70-4923-A0D3-FB80373CD6EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DFD8CD2-9C70-4923-A0D3-FB80373CD6EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8A45446-E1CD-4792-BA41-1028E83D86A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8A45446-E1CD-4792-BA41-1028E83D86A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8A45446-E1CD-4792-BA41-1028E83D86A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8A45446-E1CD-4792-BA41-1028E83D86A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99826173-454C-4774-A3B8-5E5667EAC6A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99826173-454C-4774-A3B8-5E5667EAC6A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99826173-454C-4774-A3B8-5E5667EAC6A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99826173-454C-4774-A3B8-5E5667EAC6A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -20,7 +20,7 @@ namespace Service.Service
             _userRepository = userRepository;
         }
 
-        public async Task CreateUser(UserDTO userDTO)
+        public async Task<Guid> CreateUser(UserDTO userDTO)
         {
             User user = new()
             {
@@ -32,6 +32,8 @@ namespace Service.Service
             };
 
             await _userRepository.CreateUser(user);
+
+            return user.UserID;
         }
 
         public async Task<List<User>> GetAllUsers()
