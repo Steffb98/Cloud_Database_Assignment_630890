@@ -11,6 +11,6 @@ namespace DAL.Interface
     {
         public Task CreateHouse(House house);
         public Task<List<House>> GetAllHouses();
-        public Task<List<House>> GetAllHousesInPriceRange(double priceRangeLow, double priceRangeHigh);
+        public Task<List<House>> GetAllHousesInPriceRange(double lowPriceRange, double highPriceRange);
     }
 }
