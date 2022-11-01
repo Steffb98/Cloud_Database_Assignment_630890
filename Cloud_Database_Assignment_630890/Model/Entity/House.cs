@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Model.Entity
 {
-    internal class House
+    public class House
     {
+        public Guid HouseID { get; set; }
+        public string Name { get; set; }
+        public double Price { get; set; }
+        public string ImageUrl { get; set; }
     }
 }

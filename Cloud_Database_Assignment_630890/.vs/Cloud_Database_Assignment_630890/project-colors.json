@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "1452ae34-229c-4e43-8e59-a28b1bea7f2c": {
+      "ProjectGuid": "1452ae34-229c-4e43-8e59-a28b1bea7f2c",
+      "DisplayName": "Model",
+      "ColorIndex": 0
+    },
+    "c2e5e9d3-c7f5-41d6-8718-a294f706e662": {
+      "ProjectGuid": "c2e5e9d3-c7f5-41d6-8718-a294f706e662",
+      "DisplayName": "DAL",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Model.Entity
 {
-    internal class User
+    public class User
     {
+        public Guid UserID { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public double YearSalary { get; set; }
+        public double? MortgageOffer { get; set; }
+
     }
 }
