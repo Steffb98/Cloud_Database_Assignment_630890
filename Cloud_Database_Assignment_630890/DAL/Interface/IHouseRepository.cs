@@ -9,8 +9,8 @@ namespace DAL.Interface
 {
     public interface IHouseRepository
     {
-        public Task CreateHouse(House house);
-        public Task<List<House>> GetAllHouses();
-        public Task<List<House>> GetAllHousesInPriceRange(double lowPriceRange, double highPriceRange);
+        public Task CreateHouseAsync(House house);
+        public Task<List<House>> GetAllHousesAsync();
+        public Task<List<House>> GetAllHousesInPriceRangeAsync(double lowPriceRange, double highPriceRange);
     }
 }

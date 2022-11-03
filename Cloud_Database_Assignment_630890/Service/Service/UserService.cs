@@ -1,5 +1,6 @@
 ﻿using DAL;
 using DAL.Interface;
+using Exceptions.Exceptions;
 using Model.DTO;
 using Model.Entity;
 using Service.Interface;
@@ -31,19 +32,34 @@ namespace Service.Service
                 YearSalary = userDTO.YearSalary
             };
 
-            await _userRepository.CreateUser(user);
+            await _userRepository.CreateUserAsync(user);
 
             return user.UserID;
         }
 
         public async Task<List<User>> GetAllUsers()
         {
-            return await _userRepository.GetAllUsers();
+            return await _userRepository.GetAllUsersAsync() ?? throw new EntityNotFoundException("There are no users in the database");
         }
 
-        public async Task UpdateMortgage(Guid userID, double mortgage)
+        public async Task UpdateMortgageForAllUsersAsync()
         {
-            await _userRepository.UpdateMortgage(userID, mortgage);
+            //getting all users from the database
+            List<User> users = await GetAllUsers();
+
+            foreach (User user in users)
+            {
+                //updating the mortgage for every user
+                await CalculateMortgageAsync(user);
+            }
+        }
+
+        public async Task CalculateMortgageAsync(User user)
+        {
+            //easy calculation for a mortgage offer
+            double mortgage = user.YearSalary * 2.5;
+
+            await _userRepository.UpdateMortgageAsync(user.UserID, mortgage);
         }
     }
 }

@@ -59,5 +59,23 @@ namespace User.API.Controller
             }
             return new OkObjectResult(userID);
         }
+
+        [FunctionName("GetAllUsers")]
+        [OpenApiOperation(operationId: "GetAllUsers", tags: new[] { "User" })]
+        [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "application/json", bodyType: typeof(List<Model.Entity.User>), Description = "A list of all users")]
+        public async Task<IActionResult> GetAllUsers(
+            [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequest req)
+        {
+            List<Model.Entity.User> users;
+            try
+            {
+                users = await _userService.GetAllUsers();
+            }
+            catch (DbUpdateException)
+            {
+                return new InternalServerErrorResult();
+            }
+            return new OkObjectResult(users);
+        }
     }
 }

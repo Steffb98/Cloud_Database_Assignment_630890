@@ -9,6 +9,7 @@ namespace Service.Interface
 {
     public interface IMailService
     {
-        public Task SendMail(User user);
+        public Task SendMailAsync(User user);
+        public Task SendMailToAllUsersAsync();
     }
 }

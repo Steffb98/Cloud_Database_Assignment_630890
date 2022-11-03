@@ -18,7 +18,7 @@ namespace DAL.Repository
             _dbContext = dbContext;
         }
 
-        public async Task CreateUser(User user)
+        public async Task CreateUserAsync(User user)
         {
             //first we add the user to the table
             await _dbContext.Users.AddAsync(user);
@@ -26,14 +26,21 @@ namespace DAL.Repository
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<List<User>> GetAllUsers()
+        public async Task<List<User>> GetAllUsersAsync()
         {
             //returning a list of all users in the database
-            return await _dbContext.Users
-                .ToListAsync() ?? throw new EntityNotFoundException("There are no users in the database");
+            List<User> users =  await _dbContext.Users
+                .ToListAsync();
+
+            if(users.Count == 0)
+            {
+                throw new EntityNotFoundException("There are no users found in the database");
+            }
+
+            return users;
         }
 
-        public async Task UpdateMortgage(Guid userID, double mortgage)
+        public async Task UpdateMortgageAsync(Guid userID, double mortgage)
         {
             //finding the card that should be updated.
             User userToUpdate = await _dbContext.Users
