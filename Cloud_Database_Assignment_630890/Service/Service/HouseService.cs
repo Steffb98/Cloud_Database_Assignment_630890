@@ -12,15 +12,14 @@ namespace Service.Service
 {
     public class HouseService : IHouseService
     {
-
         private readonly IHouseRepository _houseRepository;
 
-        public HouseService(IHouseRepository houseRepository)
+        public HouseService(IHouseRepository houseRepository, IMailService mailService)
         {
             _houseRepository = houseRepository;
         }
 
-        public async Task CreateHouse(HouseDTO houseDTO)
+        public async Task<Guid> CreateHouse(HouseDTO houseDTO)
         {
             House house = new()
             {
@@ -29,17 +28,18 @@ namespace Service.Service
                 Price = houseDTO.Price,
                 ImageUrl = houseDTO.ImageURL
             };
-            await _houseRepository.CreateHouse(house);
+            await _houseRepository.CreateHouseAsync(house);
+            return house.HouseID;
         }
 
         public async Task<List<House>> GetAllHouses()
         {
-            return await _houseRepository.GetAllHouses();
+            return await _houseRepository.GetAllHousesAsync();
         }
 
-        public async Task<List<House>> GetAllHousesWithPriceRange(PriceRangeDTO priceRangeDTO)
+        public async Task<List<House>> GetAllHousesWithPriceRange(double lowPriceRange, double highPriceRange)
         {
-            return await _houseRepository.GetAllHousesInPriceRange(priceRangeDTO.LowPriceRange, priceRangeDTO.HighPriceRange);
+            return await _houseRepository.GetAllHousesInPriceRangeAsync(lowPriceRange, highPriceRange);
         }
     }
 }

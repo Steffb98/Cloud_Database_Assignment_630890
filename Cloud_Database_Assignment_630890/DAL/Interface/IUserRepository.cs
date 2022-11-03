@@ -9,8 +9,8 @@ namespace DAL.Interface
 {
     public interface IUserRepository
     {
-        public Task CreateUser(User user);
-        public Task UpdateMortgage(Guid userID, double mortgage);
-        public Task<List<User>> GetAllUsers();
+        public Task CreateUserAsync(User user);
+        public Task UpdateMortgageAsync(Guid userID, double mortgage);
+        public Task<List<User>> GetAllUsersAsync();
     }
 }

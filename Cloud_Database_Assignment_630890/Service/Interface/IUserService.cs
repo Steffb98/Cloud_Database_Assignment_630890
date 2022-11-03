@@ -10,8 +10,9 @@ namespace Service.Interface
 {
     public interface IUserService
     {
-        public Task CreateUser(UserDTO userDTO);
+        public Task<Guid> CreateUser(UserDTO userDTO);
         public Task<List<User>> GetAllUsers();
-        public Task UpdateMortgage(Guid userID, double mortgage);
+        public Task UpdateMortgageForAllUsersAsync();
+        public Task CalculateMortgageAsync(User user);
     }
 }

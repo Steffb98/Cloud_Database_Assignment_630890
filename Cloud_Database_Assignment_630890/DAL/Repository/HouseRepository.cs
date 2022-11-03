@@ -13,7 +13,7 @@ namespace DAL.Repository
             _dbContext = dbContext;
         }
 
-        public async Task CreateHouse(House house)
+        public async Task CreateHouseAsync(House house)
         {
             //first we add the user to the table
             await _dbContext.Houses.AddAsync(house);
@@ -21,14 +21,14 @@ namespace DAL.Repository
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<List<House>> GetAllHouses()
+        public async Task<List<House>> GetAllHousesAsync()
         {
             //returning a list of all houses in the database
             return await _dbContext.Houses
                 .ToListAsync() ?? throw new EntityNotFoundException("There are no users in the database");
         }
 
-        public async Task<List<House>> GetAllHousesInPriceRange(double lowPriceRange, double highPriceRange)
+        public async Task<List<House>> GetAllHousesInPriceRangeAsync(double lowPriceRange, double highPriceRange)
         {
             //returns a list of all houses in the database within the price range.
             return await _dbContext.Houses
