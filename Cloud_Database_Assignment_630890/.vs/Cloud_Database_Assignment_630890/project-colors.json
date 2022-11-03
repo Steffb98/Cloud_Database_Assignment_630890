@@ -30,7 +30,17 @@
       "ProjectGuid": "99826173-454c-4774-a3b8-5e5667eac6a8",
       "DisplayName": "User.API",
       "ColorIndex": 4
+    },
+    "1ef370c4-394f-4ee2-aad4-91e4a0dec4b7": {
+      "ProjectGuid": "1ef370c4-394f-4ee2-aad4-91e4a0dec4b7",
+      "DisplayName": "SendMail.Timer",
+      "ColorIndex": 5
+    },
+    "9396ae5d-db11-4ca3-b9f8-b507ba9ec704": {
+      "ProjectGuid": "9396ae5d-db11-4ca3-b9f8-b507ba9ec704",
+      "DisplayName": "UpdateMortgage.Timer",
+      "ColorIndex": 6
     }
   },
-  "NextColorIndex": 5
+  "NextColorIndex": 7
 }

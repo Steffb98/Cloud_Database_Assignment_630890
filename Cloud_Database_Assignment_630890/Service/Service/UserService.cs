@@ -1,14 +1,8 @@
-﻿using DAL;
-using DAL.Interface;
+﻿using DAL.Interface;
 using Exceptions.Exceptions;
 using Model.DTO;
 using Model.Entity;
 using Service.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Service.Service
 {

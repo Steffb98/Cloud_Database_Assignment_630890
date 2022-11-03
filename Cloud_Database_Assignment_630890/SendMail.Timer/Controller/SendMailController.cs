@@ -1,11 +1,7 @@
 ﻿using Service.Interface;
-using System.Collections.Generic;
-using Microsoft.Azure.Functions.Worker;
 using System.Threading.Tasks;
 using Microsoft.Azure.WebJobs;
-using Model.Entity;
 using Microsoft.Extensions.Logging;
-using System;
 using Exceptions.Exceptions;
 
 namespace SendMail.Timer.Controller

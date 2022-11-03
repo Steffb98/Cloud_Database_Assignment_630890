@@ -2,11 +2,6 @@
 using Azure.Communication.Email.Models;
 using Model.Entity;
 using Service.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Service.Service
 {
